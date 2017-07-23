@@ -1,0 +1,37 @@
+[21:08:36] [Server thread/INFO]: Starting minecraft server version 1.11.2
+[21:08:36] [Server thread/INFO]: Loading properties
+[21:08:36] [Server thread/INFO]: Default game type: SURVIVAL
+[21:08:36] [Server thread/INFO]: Generating keypair
+[21:08:36] [Server thread/INFO]: Starting Minecraft server on *:25565
+[21:08:37] [Server thread/INFO]: Using epoll channel type
+[21:08:37] [Server thread/INFO]: Preparing level "world"
+[21:08:37] [Server thread/INFO]: Preparing start region for level 0
+[21:08:38] [Server thread/INFO]: Preparing spawn area: 3%
+[21:08:39] [Server thread/INFO]: Preparing spawn area: 45%
+[21:08:40] [Server thread/INFO]: Done (3.081s)! For help, type "help" or "?"
+[21:08:45] [User Authenticator #1/INFO]: UUID of player rocket0983 is 61944a42-e89e-4fac-a51c-c38707e58f97
+[21:08:45] [Server thread/INFO]: rocket0983[/198.27.217.126:65522] logged in with entity id 102 at (173.60788214734438, 144.0, 379.9668994581098)
+[21:08:45] [Server thread/INFO]: rocket0983 joined the game
+[21:08:46] [Server thread/WARN]: Keeping entity minecraft:bat that already exists with UUID 270d6b53-e81f-4401-92ef-5a4cd8dc97db
+[21:08:47] [User Authenticator #2/INFO]: UUID of player _eg is 205da4b1-bc9e-4699-aff6-70af3d28a8a4
+[21:08:47] [Server thread/INFO]: _eg[/96.42.217.81:39130] logged in with entity id 351 at (688.3000000119209, 69.0, -218.58416970788647)
+[21:08:47] [Server thread/INFO]: _eg joined the game
+[21:08:48] [Server thread/WARN]: Keeping entity minecraft:chicken that already exists with UUID db2e8b17-fbfa-4157-a727-63cac647ca81
+[21:08:48] [Server thread/WARN]: Keeping entity minecraft:chicken that already exists with UUID 2303eda2-df3c-4d4c-aadb-5fccbe883baf
+[21:08:48] [Server thread/WARN]: Keeping entity minecraft:sheep that already exists with UUID e8a53888-61ec-4e03-b763-06e1fd0b3397
+[21:08:48] [Server thread/WARN]: Keeping entity minecraft:sheep that already exists with UUID d90620e3-8c2a-4071-be49-bd5872fa3810
+[21:08:55] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 8506ms behind, skipping 170 tick(s)
+[21:09:05] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 2377ms behind, skipping 47 tick(s)
+[21:12:22] [Server thread/INFO]: rocket0983 fell from a high place
+[21:13:36] [Server thread/WARN]: Keeping entity minecraft:sheep that already exists with UUID e8a53888-61ec-4e03-b763-06e1fd0b3397
+[21:15:15] [Server thread/INFO]: Set game difficulty to Normal
+[21:16:13] [Server thread/WARN]: rocket0983 moved wrongly!
+[21:22:41] [Server thread/INFO]: rocket0983 lost connection: TextComponent{text='Disconnected', siblings=[], style=Style{hasParent=false, color=null, bold=null, italic=null, underlined=null, obfuscated=null, clickEvent=null, hoverEvent=null, insertion=null}}
+[21:22:41] [Server thread/INFO]: rocket0983 left the game
+[21:23:02] [Server thread/INFO]: _eg lost connection: TranslatableComponent{key='disconnect.timeout', args=[], siblings=[], style=Style{hasParent=false, color=null, bold=null, italic=null, underlined=null, obfuscated=null, clickEvent=null, hoverEvent=null, insertion=null}}
+[21:23:02] [Server thread/INFO]: _eg left the game
+[21:24:10] [User Authenticator #3/INFO]: UUID of player rocket0983 is 61944a42-e89e-4fac-a51c-c38707e58f97
+[21:24:10] [Server thread/INFO]: rocket0983[/198.27.217.126:49329] logged in with entity id 208750 at (257.5, 85.5625, 171.5)
+[21:24:10] [Server thread/INFO]: rocket0983 joined the game
+[21:25:03] [Server thread/INFO]: rocket0983 lost connection: TextComponent{text='Disconnected', siblings=[], style=Style{hasParent=false, color=null, bold=null, italic=null, underlined=null, obfuscated=null, clickEvent=null, hoverEvent=null, insertion=null}}
+[21:25:03] [Server thread/INFO]: rocket0983 left the game

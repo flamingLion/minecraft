@@ -1,0 +1,213 @@
+---- Minecraft Crash Report ----
+// But it works on my machine.
+
+Time: 5/2/17 2:30 AM
+Description: Watching Server
+
+java.lang.Error
+	at java.util.zip.Inflater.inflateBytes(Native Method)
+	at java.util.zip.Inflater.inflate(Inflater.java:259)
+	at java.util.zip.InflaterInputStream.read(InflaterInputStream.java:152)
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:265)
+	at java.io.DataInputStream.readByte(DataInputStream.java:265)
+	at ed.a(SourceFile:106)
+	at ed.a(SourceFile:82)
+	at ed.a(SourceFile:78)
+	at avd.a(SourceFile:66)
+	at lv.f(SourceFile:124)
+	at lv.b(SourceFile:81)
+	at mb.<init>(SourceFile:40)
+	at mc.c(SourceFile:196)
+	at mc.c(SourceFile:288)
+	at mt.d(SourceFile:325)
+	at mi.a(SourceFile:513)
+	at iz.a(SourceFile:126)
+	at iz$a.a(SourceFile:57)
+	at fo$1.run(SourceFile:13)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at h.a(SourceFile:46)
+	at net.minecraft.server.MinecraftServer.D(SourceFile:606)
+	at lh.D(SourceFile:335)
+	at net.minecraft.server.MinecraftServer.C(SourceFile:562)
+	at net.minecraft.server.MinecraftServer.run(SourceFile:466)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server Watchdog
+Stacktrace:
+	at java.util.zip.Inflater.inflateBytes(Native Method)
+	at java.util.zip.Inflater.inflate(Inflater.java:259)
+	at java.util.zip.InflaterInputStream.read(InflaterInputStream.java:152)
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:265)
+	at java.io.DataInputStream.readByte(DataInputStream.java:265)
+	at ed.a(SourceFile:106)
+	at ed.a(SourceFile:82)
+	at ed.a(SourceFile:78)
+	at avd.a(SourceFile:66)
+	at lv.f(SourceFile:124)
+	at lv.b(SourceFile:81)
+	at mb.<init>(SourceFile:40)
+	at mc.c(SourceFile:196)
+	at mc.c(SourceFile:288)
+	at mt.d(SourceFile:325)
+	at mi.a(SourceFile:513)
+	at iz.a(SourceFile:126)
+	at iz$a.a(SourceFile:57)
+	at fo$1.run(SourceFile:13)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at h.a(SourceFile:46)
+	at net.minecraft.server.MinecraftServer.D(SourceFile:606)
+	at lh.D(SourceFile:335)
+	at net.minecraft.server.MinecraftServer.C(SourceFile:562)
+
+-- Thread Dump --
+Details:
+	Threads: "Downloader 3" Id=37 TIMED_WAITING on java.util.concurrent.SynchronousQueue$TransferStack@4c57444e
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.SynchronousQueue$TransferStack@4c57444e
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+	at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:460)
+	at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:362)
+	at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:941)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1066)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	...
+
+
+"Downloader 2" Id=36 TIMED_WAITING on java.util.concurrent.SynchronousQueue$TransferStack@4c57444e
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.SynchronousQueue$TransferStack@4c57444e
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+	at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:460)
+	at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:362)
+	at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:941)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1066)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	...
+
+
+"File IO Thread" Id=28 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at bdp.c(SourceFile:51)
+	at bdp.run(SourceFile:30)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+"Netty Epoll Server IO #1" Id=19 RUNNABLE (in native)
+	at io.netty.channel.epoll.Native.epollWait(Native Method)
+	at io.netty.channel.epoll.EpollEventLoop.epollWait(EpollEventLoop.java:194)
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:219)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:116)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+"Server Watchdog" Id=21 RUNNABLE
+	at sun.management.ThreadImpl.dumpThreads0(Native Method)
+	at sun.management.ThreadImpl.dumpAllThreads(ThreadImpl.java:454)
+	at li.run(SourceFile:43)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+"Netty Epoll Server IO #0" Id=18 BLOCKED on java.util.ArrayDeque@4290a3b4 owned by "Server thread" Id=12
+	at net.minecraft.server.MinecraftServer.a(SourceFile:1278)
+	-  blocked on java.util.ArrayDeque@4290a3b4
+	at net.minecraft.server.MinecraftServer.a(SourceFile:1295)
+	at lw.a(SourceFile:1163)
+	at fo.a(SourceFile:10)
+	at mi.a(SourceFile:388)
+	at iz.a(SourceFile:126)
+	at iz$a.a(SourceFile:57)
+	at er.a(SourceFile:136)
+	...
+
+
+"Server console handler" Id=15 RUNNABLE (in native)
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(FileInputStream.java:255)
+	at java.io.BufferedInputStream.read1(BufferedInputStream.java:284)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:345)
+	-  locked java.io.BufferedInputStream@46af2f3e
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	-  locked java.io.InputStreamReader@3ada98f
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	...
+
+
+"DestroyJavaVM" Id=14 RUNNABLE
+
+
+"Server thread" Id=12 RUNNABLE
+	at java.util.zip.Inflater.inflateBytes(Native Method)
+	at java.util.zip.Inflater.inflate(Inflater.java:259)
+	-  locked java.util.zip.ZStreamRef@75aee880
+	at java.util.zip.InflaterInputStream.read(InflaterInputStream.java:152)
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:265)
+	-  locked java.io.BufferedInputStream@32e46882
+	at java.io.DataInputStream.readByte(DataInputStream.java:265)
+	at ed.a(SourceFile:106)
+	at ed.a(SourceFile:82)
+	...
+
+
+"Server Infinisleeper" Id=11 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at lh$1.run(SourceFile:79)
+
+
+"Snooper Timer" Id=10 TIMED_WAITING on java.util.TaskQueue@d0d773f
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.util.TaskQueue@d0d773f
+	at java.util.TimerThread.mainLoop(Timer.java:552)
+	at java.util.TimerThread.run(Timer.java:505)
+
+
+"Signal Dispatcher" Id=4 RUNNABLE
+
+
+"Finalizer" Id=3 WAITING on java.lang.ref.ReferenceQueue$Lock@638256c0
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@638256c0
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:164)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:209)
+
+
+"Reference Handler" Id=2 WAITING on java.lang.ref.Reference$Lock@616a48d8
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.Reference$Lock@616a48d8
+	at java.lang.Object.wait(Object.java:502)
+	at java.lang.ref.Reference.tryHandlePending(Reference.java:191)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)
+
+
+
+Stacktrace:
+	at li.run(SourceFile:59)
+	at java.lang.Thread.run(Thread.java:745)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.11.2
+	Operating System: Linux (amd64) version 3.13.0-48-generic
+	Java Version: 1.8.0_111, Oracle Corporation
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 662952096 bytes (632 MB) / 1038024704 bytes (989 MB) up to 1520435200 bytes (1450 MB)
+	JVM Flags: 2 total; -Xmx1500M -Xms1024M
+	IntCache: cache: 0, tcache: 0, allocated: 13, tallocated: 95
+	Profiler Position: N/A (disabled)
+	Player Count: 0 / 4; []
+	Is Modded: Unknown (can't tell)
+	Type: Dedicated Server (map_server.txt)
